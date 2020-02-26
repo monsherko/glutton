@@ -27,5 +27,5 @@ WORKDIR /opt/glutton
 COPY --from=build-env /opt/glutton/bin/server /opt/glutton/bin/server
 COPY --from=build-env /opt/glutton/config /opt/glutton/config
 COPY --from=build-env /opt/glutton/rules /opt/glutton/rules
-
+USER root:root
 CMD ["./bin/server", "-i", "eth0", "-l", "/var/log/glutton.log", "-d", "true"]
